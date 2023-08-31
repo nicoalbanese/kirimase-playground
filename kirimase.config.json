@@ -1,0 +1,11 @@
+{
+  "driver": "pg",
+  "hasSrc": true,
+  "provider": "neon",
+  "packages": [
+    "drizzle",
+    "trpc",
+    "next-auth"
+  ],
+  "preferredPackageManager": "pnpm"
+}
