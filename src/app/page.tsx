@@ -4,6 +4,7 @@ import { api } from "@/lib/trpc/api";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 export default async function Home() {
   const users = await api.users.getUsers.query();
   const { session } = await getUserAuth();

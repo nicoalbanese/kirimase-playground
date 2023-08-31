@@ -15,15 +15,21 @@ declare module "next-auth" {
 
 export const authOptions: NextAuthOptions = {
   adapter: DrizzleAdapter(db),
+  callbacks: {
+    session: ({ session, user }) => {
+      session.user.id = user.id;
+      return session;
+    },
+  },
   providers: [
-     DiscordProvider({
+    DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID!,
       clientSecret: process.env.DISCORD_CLIENT_SECRET!,
     }),
-GoogleProvider({
+    GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    })
+    }),
   ],
 };
 

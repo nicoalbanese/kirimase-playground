@@ -7,6 +7,7 @@ import {
 } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "@auth/core/adapters";
 import { createSelectSchema } from "drizzle-zod";
+import { z } from "zod";
 
 export const users = pgTable("user", {
   id: text("id").notNull().primaryKey(),
@@ -17,6 +18,7 @@ export const users = pgTable("user", {
 });
 
 export const userIdSchema = createSelectSchema(users).pick({ id: true });
+export type UserId = z.infer<typeof userIdSchema>;
 
 export const accounts = pgTable(
   "account",

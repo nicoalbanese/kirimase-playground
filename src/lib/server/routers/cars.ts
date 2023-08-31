@@ -1,5 +1,5 @@
 import { getCarById, getCars } from "@/lib/api/cars/queries";
-import { publicProcedure, router } from "../trpc";
+import { protectedProcedure, publicProcedure, router } from "../trpc";
 import {
   carIdSchema,
   insertCarSchema,
@@ -7,7 +7,7 @@ import {
 } from "@/lib/db/schema/cars";
 import { createCar, deleteCar, updateCar } from "@/lib/api/cars/mutations";
 export const carsRouter = router({
-  getCars: publicProcedure.query(async ({ ctx }) => {
+  getCars: protectedProcedure.query(async ({ ctx }) => {
     return getCars(ctx.session?.user.id!);
   }),
   getCarById: publicProcedure.input(carIdSchema).query(async ({ input }) => {
