@@ -38,9 +38,6 @@ dependencies:
   '@types/react-dom':
     specifier: 18.2.7
     version: 18.2.7
-  app-dir:
-    specifier: link:@trpc/next/app-dir
-    version: link:@trpc/next/app-dir
   autoprefixer:
     specifier: 10.4.15
     version: 10.4.15(postcss@8.4.29)
@@ -62,9 +59,6 @@ dependencies:
   next-auth:
     specifier: ^4.23.1
     version: 4.23.1(next@13.4.19)(react-dom@18.2.0)(react@18.2.0)
-  nextCache:
-    specifier: link:@trpc/next/app-dir/links/nextCache
-    version: link:@trpc/next/app-dir/links/nextCache
   postcss:
     specifier: 8.4.29
     version: 8.4.29
@@ -74,9 +68,6 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
-  server:
-    specifier: link:@trpc/next/app-dir/server
-    version: link:@trpc/next/app-dir/server
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
