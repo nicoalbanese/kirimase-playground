@@ -15,7 +15,7 @@ export const cars = pgTable("cars", {
 
 // Schema for inserting cars - can be used to validate API requests
 export const insertCarSchema = createInsertSchema(cars, {
-  userId: z.coerce.number(),
+  userId: z.coerce.string(),
 });
 export type NewCar = z.infer<typeof insertCarSchema>;
 
