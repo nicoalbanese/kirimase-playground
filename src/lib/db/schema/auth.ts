@@ -6,6 +6,7 @@ import {
   integer,
 } from "drizzle-orm/pg-core";
 import type { AdapterAccount } from "@auth/core/adapters";
+import { createSelectSchema } from "drizzle-zod";
 
 export const users = pgTable("user", {
   id: text("id").notNull().primaryKey(),
@@ -14,6 +15,8 @@ export const users = pgTable("user", {
   emailVerified: timestamp("emailVerified", { mode: "date" }),
   image: text("image"),
 });
+
+export const userIdSchema = createSelectSchema(users).pick({ id: true });
 
 export const accounts = pgTable(
   "account",
